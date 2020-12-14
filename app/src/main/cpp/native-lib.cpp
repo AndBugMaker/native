@@ -14,7 +14,7 @@ Java_com_example_nativwapp_MainActivity_signParams(JNIEnv *env, jobject _, jobje
         return env->NewStringUTF("");
 
     // 获取HashMap类entrySet()方法ID
-    jclass hashmapClass = env->FindClass("java/util/TreeMap");
+    jclass hashmapClass = env->FindClass("java/util/Map");
     jmethodID entrySetMID = env->GetMethodID(hashmapClass, "entrySet", "()Ljava/util/Set;");
     // 调用entrySet()方法获取Set对象
     jobject setObj = env->CallObjectMethod(params, entrySetMID);
